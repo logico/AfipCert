@@ -65,6 +65,7 @@ Partial Class frmMain
         Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.fdSeleccionDirectorio = New System.Windows.Forms.FolderBrowserDialog()
         Me.lnkSoporte = New System.Windows.Forms.LinkLabel()
+        Me.oFile = New System.Windows.Forms.OpenFileDialog()
         Me.tabContainer.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -543,4 +544,5 @@ Partial Class frmMain
     Friend WithEvents Label11 As Label
     Friend WithEvents txtNombreArchivoPfx As TextBox
     Friend WithEvents Label16 As Label
+    Friend WithEvents oFile As OpenFileDialog
 End Class

@@ -55,6 +55,7 @@
            Utils.DirectorioExiste(txtDirectorioSalidaPfx, btnSeleccionarDirectorioPfx, err) And
            Utils.EsCampoVacio(txtNombreArchivoPfx, err) And
            Utils.ContraseniasCoinciden(txtContrasenia, txtContraseniaConfirmar, err) Then
+            Debug.Print($"{Environment.CurrentDirectory}\convertir.bat {Environment.CurrentDirectory}\openssl.cnf ""{txtClavePrivadaPath.Text}"" ""{txtCertificadoPath.Text}"" ""{txtDirectorioSalidaPfx.Text}\{txtNombreArchivoPfx.Text}.pfx"" ""{txtContrasenia.Text}""")
             Dim codigoSalida As Integer = Shell($"{Environment.CurrentDirectory}\convertir.bat {Environment.CurrentDirectory}\openssl.cnf ""{txtClavePrivadaPath.Text}"" ""{txtCertificadoPath.Text}"" ""{txtDirectorioSalidaPfx.Text}\{txtNombreArchivoPfx.Text}.pfx"" ""{txtContrasenia.Text}""", AppWinStyle.Hide, True)
             If codigoSalida = 0 Then
                 MsgBox("El certificado fue exportado correctamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AfipCert")
@@ -82,5 +83,33 @@
 
     Private Sub txtNombreArchivoPfx_Leave(sender As Object, e As EventArgs) Handles txtNombreArchivoPfx.Leave
         Utils.EsCampoVacio(txtNombreArchivoPfx, err)
+    End Sub
+
+    Private Sub btnSeleccionarClavePrivada_Click(sender As Object, e As EventArgs) Handles btnSeleccionarClavePrivada.Click
+        With oFile
+            .Filter = "Clave privada|*.key|Todos los archivos|*.*"
+            .FilterIndex = 0
+            .FileName = ""
+            If .ShowDialog(Me) = DialogResult.OK Then
+                txtClavePrivadaPath.Text = .FileName
+            End If
+        End With
+    End Sub
+
+    Private Sub btnSeleccionarCertificado_Click(sender As Object, e As EventArgs) Handles btnSeleccionarCertificado.Click
+        With oFile
+            .Filter = "Certificado|*.crt|Todos los archivos|*.*"
+            .FilterIndex = 0
+            .FileName = ""
+            If oFile.ShowDialog(Me) = DialogResult.OK Then
+                txtCertificadoPath.Text = oFile.FileName
+            End If
+        End With
+    End Sub
+
+    Private Sub btnSeleccionarDirectorioPfx_Click(sender As Object, e As EventArgs) Handles btnSeleccionarDirectorioPfx.Click
+        If fdSeleccionDirectorio.ShowDialog(Me) = DialogResult.OK Then
+            txtDirectorioSalidaPfx.Text = fdSeleccionDirectorio.SelectedPath
+        End If
     End Sub
 End Class
