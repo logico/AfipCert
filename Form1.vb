@@ -3,19 +3,23 @@
         Shell($"{Environment.CurrentDirectory}\ejecutar.bat {Environment.CurrentDirectory}\openssl.cnf", AppWinStyle.Hide, True)
     End Sub
 
-    Private Sub btnCrearCertificado_Click(sender As Object, e As EventArgs) Handles btnCrearCertificado.Click
-
-    End Sub
-
-    Private Sub txtNombreArchivoClave_TextChanged(sender As Object, e As EventArgs) Handles txtNombreArchivoClave.TextChanged
-
-    End Sub
-
     Private Sub txtNombreArchivoClave_Leave(sender As Object, e As EventArgs) Handles txtNombreArchivoClave.Leave
-        If txtNombreArchivoClave.Text.Trim.Length = 0 Then
-            err.SetError(txtNombreArchivoClave, "El nombre de archivo es obligatorio")
-        Else
-            err.SetError(txtNombreArchivoClave, "")
-        End If
+        Utils.EsCampoVacio(txtNombreArchivoClave, err)
+    End Sub
+
+    Private Sub txtNombreEmpresa_Leave(sender As Object, e As EventArgs) Handles txtNombreEmpresa.Leave
+        Utils.EsCampoVacio(txtNombreEmpresa, err)
+    End Sub
+
+    Private Sub txtNombrePersona_Leave(sender As Object, e As EventArgs) Handles txtNombrePersona.Leave
+        Utils.EsCampoVacio(txtNombrePersona, err)
+    End Sub
+
+    Private Sub txtCuit_Leave(sender As Object, e As EventArgs) Handles txtCuit.Leave
+        Utils.EsCampoVacio(txtCuit, err)
+    End Sub
+
+    Private Sub txtNombreArchivoCSR_Leave(sender As Object, e As EventArgs) Handles txtNombreArchivoCSR.Leave
+        Utils.EsCampoVacio(txtNombreArchivoCSR, err)
     End Sub
 End Class

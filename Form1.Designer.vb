@@ -288,6 +288,7 @@ Partial Class frmMain
         '
         'err
         '
+        Me.err.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.err.ContainerControl = Me
         Me.err.Icon = CType(resources.GetObject("err.Icon"), System.Drawing.Icon)
         '
