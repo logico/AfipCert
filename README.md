@@ -16,6 +16,10 @@
   - Completar y confirmar la contraseña que va a utilzar el certificado PFX.
   - Hacer click en el botón "Convertir"
 
+## Información para desarrolladores.
+
+La aplicación es un frontend de OpenSSL. Para evitar tener que instalarlo y/o tener que elevar los permisos para su ejecución, AfipCert utiliza los [binarios de OpenSSL](https://bintray.com/vszakats/generic/openssl) que son llamados desde dos archivos batch (generar.bat y convertir.bat) con los parametros recopilados. Estos archivos batch deben estar en el mismo directorio que AfipCert, openssl.exe y openssl.cnf para funcionar.
+
 ## Contacto.
 
 Para ideas o sugerencias pueden visitarnos en [logico](https://logico.ar).
