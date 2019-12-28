@@ -50,6 +50,19 @@ Partial Class frmMain
         Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.fdSeleccionDirectorio = New System.Windows.Forms.FolderBrowserDialog()
         Me.lnkSoporte = New System.Windows.Forms.LinkLabel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtClavePrivadaPath = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.txtCertificadoPath = New System.Windows.Forms.TextBox()
+        Me.txtDirectorioSalidaPfx = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.txtContrasenia = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtContraseniaConfirmar = New System.Windows.Forms.TextBox()
         Me.tabContainer.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -254,6 +267,19 @@ Partial Class frmMain
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.txtContraseniaConfirmar)
+        Me.TabPage2.Controls.Add(Me.txtContrasenia)
+        Me.TabPage2.Controls.Add(Me.Label15)
+        Me.TabPage2.Controls.Add(Me.Label14)
+        Me.TabPage2.Controls.Add(Me.txtDirectorioSalidaPfx)
+        Me.TabPage2.Controls.Add(Me.Label13)
+        Me.TabPage2.Controls.Add(Me.Button4)
+        Me.TabPage2.Controls.Add(Me.txtCertificadoPath)
+        Me.TabPage2.Controls.Add(Me.txtClavePrivadaPath)
+        Me.TabPage2.Controls.Add(Me.Button3)
+        Me.TabPage2.Controls.Add(Me.Button1)
+        Me.TabPage2.Controls.Add(Me.Label12)
+        Me.TabPage2.Controls.Add(Me.Label11)
         Me.TabPage2.Controls.Add(Me.Button2)
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
@@ -269,7 +295,7 @@ Partial Class frmMain
         Me.Button2.Location = New System.Drawing.Point(222, 497)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(147, 31)
-        Me.Button2.TabIndex = 7
+        Me.Button2.TabIndex = 18
         Me.Button2.Text = "Convertir"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -313,6 +339,123 @@ Partial Class frmMain
         Me.lnkSoporte.TabIndex = 12
         Me.lnkSoporte.TabStop = True
         Me.lnkSoporte.Text = "Ayuda y soporte"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(23, 76)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(125, 17)
+        Me.Label11.TabIndex = 9
+        Me.Label11.Text = "Clave privada (.key)"
+        '
+        'txtClavePrivadaPath
+        '
+        Me.txtClavePrivadaPath.Location = New System.Drawing.Point(26, 96)
+        Me.txtClavePrivadaPath.Name = "txtClavePrivadaPath"
+        Me.txtClavePrivadaPath.ReadOnly = True
+        Me.txtClavePrivadaPath.Size = New System.Drawing.Size(309, 20)
+        Me.txtClavePrivadaPath.TabIndex = 10
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(341, 95)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(30, 21)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "..."
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(23, 138)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(135, 17)
+        Me.Label12.TabIndex = 9
+        Me.Label12.Text = "Certificado AFIP (.crt)"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(341, 157)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(30, 21)
+        Me.Button3.TabIndex = 13
+        Me.Button3.Text = "..."
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'txtCertificadoPath
+        '
+        Me.txtCertificadoPath.Location = New System.Drawing.Point(26, 158)
+        Me.txtCertificadoPath.Name = "txtCertificadoPath"
+        Me.txtCertificadoPath.ReadOnly = True
+        Me.txtCertificadoPath.Size = New System.Drawing.Size(309, 20)
+        Me.txtCertificadoPath.TabIndex = 12
+        '
+        'txtDirectorioSalidaPfx
+        '
+        Me.txtDirectorioSalidaPfx.Location = New System.Drawing.Point(25, 220)
+        Me.txtDirectorioSalidaPfx.Name = "txtDirectorioSalidaPfx"
+        Me.txtDirectorioSalidaPfx.ReadOnly = True
+        Me.txtDirectorioSalidaPfx.Size = New System.Drawing.Size(309, 20)
+        Me.txtDirectorioSalidaPfx.TabIndex = 14
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(23, 200)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(112, 17)
+        Me.Label13.TabIndex = 14
+        Me.Label13.Text = "Carpeta de salida"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(340, 219)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(30, 21)
+        Me.Button4.TabIndex = 15
+        Me.Button4.Text = "..."
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'txtContrasenia
+        '
+        Me.txtContrasenia.Location = New System.Drawing.Point(26, 290)
+        Me.txtContrasenia.Name = "txtContrasenia"
+        Me.txtContrasenia.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtContrasenia.Size = New System.Drawing.Size(344, 20)
+        Me.txtContrasenia.TabIndex = 16
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(23, 269)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(233, 17)
+        Me.Label14.TabIndex = 16
+        Me.Label14.Text = "Nueva contraseña del certificado PFX"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(23, 325)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(180, 17)
+        Me.Label15.TabIndex = 16
+        Me.Label15.Text = "Confirmar nueva contraseña"
+        '
+        'txtContraseniaConfirmar
+        '
+        Me.txtContraseniaConfirmar.Location = New System.Drawing.Point(26, 346)
+        Me.txtContraseniaConfirmar.Name = "txtContraseniaConfirmar"
+        Me.txtContraseniaConfirmar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtContraseniaConfirmar.Size = New System.Drawing.Size(344, 20)
+        Me.txtContraseniaConfirmar.TabIndex = 17
         '
         'frmMain
         '
@@ -364,4 +507,17 @@ Partial Class frmMain
     Friend WithEvents err As ErrorProvider
     Friend WithEvents fdSeleccionDirectorio As FolderBrowserDialog
     Friend WithEvents lnkSoporte As LinkLabel
+    Friend WithEvents txtContraseniaConfirmar As TextBox
+    Friend WithEvents txtContrasenia As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents txtDirectorioSalidaPfx As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents txtCertificadoPath As TextBox
+    Friend WithEvents txtClavePrivadaPath As TextBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
 End Class
