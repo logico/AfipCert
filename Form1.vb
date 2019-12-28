@@ -30,7 +30,13 @@
             Utils.EsCuitValido(txtCuit, err) And
             Utils.EsCampoVacio(txtNombreArchivoCSR, err) And
             Utils.DirectorioExiste(txtDirectorioSalida, btnSeleccionDirectorioSalida, err) Then
-            Shell($"{Environment.CurrentDirectory}\ejecutar.bat {Environment.CurrentDirectory}\openssl.cnf", AppWinStyle.Hide, True)
+            Shell($"{Environment.CurrentDirectory}\ejecutar.bat 
+                    {Environment.CurrentDirectory}\openssl.cnf 
+                    {Environment.CurrentDirectory}\{txtNombreArchivoClave} 
+                    {txtNombreEmpresa.Text} 
+                    {txtNombrePersona.Text} 
+                    {txtCuit.Text} 
+                    {txtNombreArchivoCSR.Text}", AppWinStyle.Hide, True)
         End If
     End Sub
 End Class

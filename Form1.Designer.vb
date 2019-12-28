@@ -259,11 +259,11 @@ Partial Class frmMain
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(273, 480)
+        Me.Button2.Location = New System.Drawing.Point(222, 497)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(96, 31)
+        Me.Button2.Size = New System.Drawing.Size(147, 31)
         Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Button2"
+        Me.Button2.Text = "Convertir"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Label4
@@ -272,9 +272,9 @@ Partial Class frmMain
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(20, 27)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(230, 25)
+        Me.Label4.Size = New System.Drawing.Size(243, 25)
         Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Generar certificado AFIP"
+        Me.Label4.Text = "Convertir certificado AFIP"
         '
         'btnSalir
         '
