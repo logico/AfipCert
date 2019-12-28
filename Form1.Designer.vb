@@ -48,6 +48,8 @@ Partial Class frmMain
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.fdSeleccionDirectorio = New System.Windows.Forms.FolderBrowserDialog()
+        Me.lnkSoporte = New System.Windows.Forms.LinkLabel()
         Me.tabContainer.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -129,6 +131,7 @@ Partial Class frmMain
         Me.txtCuit.Name = "txtCuit"
         Me.txtCuit.Size = New System.Drawing.Size(344, 20)
         Me.txtCuit.TabIndex = 5
+        Me.txtCuit.Text = "20111111112"
         '
         'txtNombrePersona
         '
@@ -136,6 +139,7 @@ Partial Class frmMain
         Me.txtNombrePersona.Name = "txtNombrePersona"
         Me.txtNombrePersona.Size = New System.Drawing.Size(344, 20)
         Me.txtNombrePersona.TabIndex = 4
+        Me.txtNombrePersona.Text = "Lógico Software"
         '
         'txtNombreArchivoCSR
         '
@@ -143,6 +147,7 @@ Partial Class frmMain
         Me.txtNombreArchivoCSR.Name = "txtNombreArchivoCSR"
         Me.txtNombreArchivoCSR.Size = New System.Drawing.Size(344, 20)
         Me.txtNombreArchivoCSR.TabIndex = 6
+        Me.txtNombreArchivoCSR.Text = "pedido"
         '
         'txtNombreArchivoClave
         '
@@ -150,6 +155,7 @@ Partial Class frmMain
         Me.txtNombreArchivoClave.Name = "txtNombreArchivoClave"
         Me.txtNombreArchivoClave.Size = New System.Drawing.Size(344, 20)
         Me.txtNombreArchivoClave.TabIndex = 2
+        Me.txtNombreArchivoClave.Text = "privada"
         '
         'txtNombreEmpresa
         '
@@ -157,6 +163,7 @@ Partial Class frmMain
         Me.txtNombreEmpresa.Name = "txtNombreEmpresa"
         Me.txtNombreEmpresa.Size = New System.Drawing.Size(344, 20)
         Me.txtNombreEmpresa.TabIndex = 3
+        Me.txtNombreEmpresa.Text = "Lógico"
         '
         'Label10
         '
@@ -292,17 +299,34 @@ Partial Class frmMain
         Me.err.ContainerControl = Me
         Me.err.Icon = CType(resources.GetObject("err.Icon"), System.Drawing.Icon)
         '
+        'fdSeleccionDirectorio
+        '
+        Me.fdSeleccionDirectorio.RootFolder = System.Environment.SpecialFolder.MyComputer
+        '
+        'lnkSoporte
+        '
+        Me.lnkSoporte.AutoSize = True
+        Me.lnkSoporte.BackColor = System.Drawing.Color.White
+        Me.lnkSoporte.Location = New System.Drawing.Point(295, 57)
+        Me.lnkSoporte.Name = "lnkSoporte"
+        Me.lnkSoporte.Size = New System.Drawing.Size(83, 13)
+        Me.lnkSoporte.TabIndex = 12
+        Me.lnkSoporte.TabStop = True
+        Me.lnkSoporte.Text = "Ayuda y soporte"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(421, 572)
+        Me.Controls.Add(Me.lnkSoporte)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.tabContainer)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmMain"
-        Me.Text = "AfipCert     ⬢ Lógico"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "AfipCert - ⬢ Lógico Software"
         Me.tabContainer.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -310,6 +334,7 @@ Partial Class frmMain
         Me.TabPage2.PerformLayout()
         CType(Me.err, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -337,4 +362,6 @@ Partial Class frmMain
     Friend WithEvents Button2 As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents err As ErrorProvider
+    Friend WithEvents fdSeleccionDirectorio As FolderBrowserDialog
+    Friend WithEvents lnkSoporte As LinkLabel
 End Class

@@ -1,6 +1,8 @@
 ﻿Public Class frmMain
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
+    Private Sub btnSeleccionDirectorioSalida_Click(sender As Object, e As EventArgs) Handles btnSeleccionDirectorioSalida.Click
+        If fdSeleccionDirectorio.ShowDialog(Me) = DialogResult.OK Then
+            txtDirectorioSalida.Text = fdSeleccionDirectorio.SelectedPath
+        End If
     End Sub
 
     Private Sub txtNombreArchivoClave_Leave(sender As Object, e As EventArgs) Handles txtNombreArchivoClave.Leave
@@ -30,13 +32,20 @@
             Utils.EsCuitValido(txtCuit, err) And
             Utils.EsCampoVacio(txtNombreArchivoCSR, err) And
             Utils.DirectorioExiste(txtDirectorioSalida, btnSeleccionDirectorioSalida, err) Then
-            Shell($"{Environment.CurrentDirectory}\ejecutar.bat 
-                    {Environment.CurrentDirectory}\openssl.cnf 
-                    {Environment.CurrentDirectory}\{txtNombreArchivoClave} 
-                    {txtNombreEmpresa.Text} 
-                    {txtNombrePersona.Text} 
-                    {txtCuit.Text} 
-                    {txtNombreArchivoCSR.Text}", AppWinStyle.Hide, True)
+            Dim codigoSalida As Integer = Shell($"{Environment.CurrentDirectory}\generar.bat {Environment.CurrentDirectory}\openssl.cnf ""{txtDirectorioSalida.Text}\{txtNombreArchivoClave.Text}.key"" ""{txtNombreEmpresa.Text}"" ""{txtNombrePersona.Text}"" {txtCuit.Text} ""{txtDirectorioSalida.Text}\{txtNombreArchivoCSR.Text}.csr""", AppWinStyle.Hide, True)
+            If codigoSalida = 0 Then
+                MsgBox("El certificado fue generado correctamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AfipCert")
+            Else
+                MsgBox($"Hubo un error al generar el certificado. Por favor verifique que los archivos necesarios se encuentren en el directorio. {vbCrLf} Para más información vaya a https://logico.ar/", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AfipCert")
+            End If
         End If
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        End
+    End Sub
+
+    Private Sub lnkSoporte_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkSoporte.LinkClicked
+        Process.Start("https://logico.ar/blog")
     End Sub
 End Class
