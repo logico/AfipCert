@@ -9,8 +9,8 @@ Imports System.Runtime.InteropServices
 ' Revisar los valores de los atributos del ensamblado
 
 <Assembly: AssemblyTitle("AfipCert")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("Genera y convierte de manera fácil certificados SSL para el uso en webservices AFIP")>
+<Assembly: AssemblyCompany("Lógico (https://logico.ar)")>
 <Assembly: AssemblyProduct("AfipCert")>
 <Assembly: AssemblyCopyright("Copyright ©  2019")>
 <Assembly: AssemblyTrademark("")>

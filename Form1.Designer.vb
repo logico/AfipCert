@@ -415,9 +415,9 @@ Partial Class frmMain
         Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(23, 138)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(135, 17)
+        Me.Label12.Size = New System.Drawing.Size(178, 17)
         Me.Label12.TabIndex = 9
-        Me.Label12.Text = "Certificado AFIP (.crt)"
+        Me.Label12.Text = "Certificado AFIP (.crt / .pem)"
         '
         'Label11
         '
