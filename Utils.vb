@@ -27,6 +27,17 @@
         End If
     End Function
 
+    Public Shared Function DirectorioExiste(ByRef campo As TextBox, ByRef ctrl As Button, ByRef Err As ErrorProvider) As Boolean
+        If Not My.Computer.FileSystem.DirectoryExists(campo.Text) Then
+            Err.SetIconPadding(ctrl, 5)
+            Err.SetError(ctrl, "La carpeta de salida no existe")
+            Return False
+        Else
+            Err.SetError(ctrl, "")
+            Return True
+        End If
+    End Function
+
     ''' <summary>
     ''' Valida el formato y digito verificador de un número de CUIT.
     ''' </summary>
