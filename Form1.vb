@@ -48,4 +48,39 @@
     Private Sub lnkSoporte_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkSoporte.LinkClicked
         Process.Start("https://logico.ar/blog")
     End Sub
+
+    Private Sub btnConvertir_Click(sender As Object, e As EventArgs) Handles btnConvertir.Click
+        If Utils.ArchivoExiste(txtClavePrivadaPath, btnSeleccionarClavePrivada, err) And
+           Utils.ArchivoExiste(txtCertificadoPath, btnSeleccionarCertificado, err) And
+           Utils.DirectorioExiste(txtDirectorioSalidaPfx, btnSeleccionarDirectorioPfx, err) And
+           Utils.EsCampoVacio(txtNombreArchivoPfx, err) And
+           Utils.ContraseniasCoinciden(txtContrasenia, txtContraseniaConfirmar, err) Then
+            Dim codigoSalida As Integer = Shell($"{Environment.CurrentDirectory}\convertir.bat {Environment.CurrentDirectory}\openssl.cnf ""{txtClavePrivadaPath.Text}"" ""{txtCertificadoPath.Text}"" ""{txtDirectorioSalidaPfx.Text}\{txtNombreArchivoPfx.Text}.pfx"" ""{txtContrasenia.Text}""", AppWinStyle.Hide, True)
+            If codigoSalida = 0 Then
+                MsgBox("El certificado fue exportado correctamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AfipCert")
+            Else
+                MsgBox($"Hubo un error al exportar el certificado. Por favor verifique que los archivos necesarios se encuentren en el directorio. {vbCrLf} Para más información vaya a https://logico.ar/", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AfipCert")
+            End If
+        End If
+    End Sub
+
+    Private Sub txtContrasenia_TextChanged(sender As Object, e As EventArgs) Handles txtContrasenia.TextChanged
+        Utils.ContraseniasCoinciden(txtContrasenia, txtContraseniaConfirmar, err)
+    End Sub
+
+    Private Sub txtContraseniaConfirmar_TextChanged(sender As Object, e As EventArgs) Handles txtContraseniaConfirmar.TextChanged
+        Utils.ContraseniasCoinciden(txtContrasenia, txtContraseniaConfirmar, err)
+    End Sub
+
+    Private Sub txtContrasenia_Leave(sender As Object, e As EventArgs) Handles txtContrasenia.Leave
+        Utils.ContraseniasCoinciden(txtContrasenia, txtContraseniaConfirmar, err)
+    End Sub
+
+    Private Sub txtContraseniaConfirmar_Leave(sender As Object, e As EventArgs) Handles txtContraseniaConfirmar.Leave
+        Utils.ContraseniasCoinciden(txtContrasenia, txtContraseniaConfirmar, err)
+    End Sub
+
+    Private Sub txtNombreArchivoPfx_Leave(sender As Object, e As EventArgs) Handles txtNombreArchivoPfx.Leave
+        Utils.EsCampoVacio(txtNombreArchivoPfx, err)
+    End Sub
 End Class

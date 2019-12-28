@@ -38,6 +38,32 @@
         End If
     End Function
 
+    Public Shared Function ArchivoExiste(ByRef campo As TextBox, ByRef ctrl As Button, ByRef Err As ErrorProvider) As Boolean
+        If Not My.Computer.FileSystem.FileExists(campo.Text) Then
+            Err.SetIconPadding(ctrl, 5)
+            Err.SetError(ctrl, "El archivo no existe")
+            Return False
+        Else
+            Err.SetError(ctrl, "")
+            Return True
+        End If
+    End Function
+
+    Public Shared Function ContraseniasCoinciden(ByRef pass As TextBox, ByRef passConfirmacion As TextBox, ByRef Err As ErrorProvider) As Boolean
+        If pass.Text.Trim.Length = 0 Then
+            Err.SetIconPadding(pass, 5)
+            Err.SetError(pass, "El nombre de archivo es obligatorio")
+            Return False
+        ElseIf pass.Text <> passConfirmacion.Text Then
+            Err.SetIconPadding(pass, 5)
+            Err.SetError(pass, "El nombre de archivo es obligatorio")
+            Return False
+        Else
+            Err.SetError(pass, "")
+            Return True
+        End If
+    End Function
+
     ''' <summary>
     ''' Valida el formato y digito verificador de un número de CUIT.
     ''' </summary>
