@@ -46,7 +46,7 @@
     End Sub
 
     Private Sub lnkSoporte_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkSoporte.LinkClicked
-        Process.Start("https://logico.ar/blog")
+        Process.Start("https://logico.ar/blog/2019/12/28/afipcert-crea-y-convierte-de-manera-facil-certificados-digitales-afip")
     End Sub
 
     Private Sub btnConvertir_Click(sender As Object, e As EventArgs) Handles btnConvertir.Click
